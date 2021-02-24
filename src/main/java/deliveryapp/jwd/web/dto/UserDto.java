@@ -1,6 +1,4 @@
-package deliveryapp.jwd.dto;
-
-
+package deliveryapp.jwd.web.dto;
 
 import java.time.LocalDateTime;
 
@@ -10,15 +8,21 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 public class UserDto {
+	
 	private Long id;
+	
 	@NotBlank
 	private String username;
+	
 	@NotEmpty
 	@Email
 	private String email;
+	
 	private LocalDateTime dateOfBirth;
+	
 	@Size(min=3, max=50)
 	private String firstName;
+	
 	@Size(min=3, max=50)
 	private String lastName;
 	

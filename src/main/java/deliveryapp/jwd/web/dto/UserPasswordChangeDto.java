@@ -1,4 +1,4 @@
-package deliveryapp.jwd.dto;
+package deliveryapp.jwd.web.dto;
 
 
 

@@ -1,13 +1,13 @@
 package deliveryapp.jwd.service;
 
-
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 
-import deliveryapp.jwd.dto.UserPasswordChangeDto;
+
 import deliveryapp.jwd.model.User;
+import deliveryapp.jwd.web.dto.UserPasswordChangeDto;
 
 
 public interface UserService {

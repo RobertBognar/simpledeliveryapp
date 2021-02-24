@@ -9,6 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
+import deliveryapp.jwd.web.dto.BillDTO;
+
 public class Order {
 	
 	@Id
@@ -176,6 +178,11 @@ public class Order {
 		return "Order [id=" + id + ", orderNumber=" + orderNumber + ", orderDate=" + orderDate + ", deliveryPlace="
 				+ deliveryPlace + ", orderPrice=" + orderPrice + ", orderDescription=" + orderDescription
 				+ ", deliverer=" + deliverer + ", bill=" + bill + "]";
+	}
+
+	public void setBill(BillDTO convert) {
+		this.bill = bill;
+		
 	}
 	
 	

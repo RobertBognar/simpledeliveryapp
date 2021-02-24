@@ -12,10 +12,11 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import deliveryapp.jwd.dto.UserPasswordChangeDto;
+
 import deliveryapp.jwd.model.User;
 import deliveryapp.jwd.repository.UserRepository;
 import deliveryapp.jwd.service.UserService;
+import deliveryapp.jwd.web.dto.UserPasswordChangeDto;
 
 
 @Service

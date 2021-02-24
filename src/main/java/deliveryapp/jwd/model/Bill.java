@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import deliveryapp.jwd.web.dto.OrderDTO;
+
 public class Bill {
 	
 	@Id
@@ -24,6 +26,9 @@ public class Bill {
 	@OneToOne(mappedBy = "bill")
 	private Order order;
 	
+	public Bill() {
+		
+	}
 	public Bill(int billNumber, String billDate, double totalPrice) {
 		this.billNumber = billNumber;
 		this.billDate = billDate;
@@ -119,6 +124,10 @@ public class Bill {
 	public String toString() {
 		return "Bill [id=" + id + ", billNumber=" + billNumber + ", billDate=" + billDate + ", totalPrice=" + totalPrice
 				+ ", order=" + order + "]";
+	}
+	public void setOrder(OrderDTO convert) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
