@@ -18,5 +18,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 			"(:orderNumber = NULL OR o.number LIKE :orderNumber) AND " + 
 			"(:orderDescription = NULL OR o.description = :orderDescription)")
 	Page<Order> search(@Param("orderNumber") String orderNumber, @Param("orderDescription") String orderDescription, PageRequest pageRequest);
+	
+	Order findOneById(Long id);
 
 }

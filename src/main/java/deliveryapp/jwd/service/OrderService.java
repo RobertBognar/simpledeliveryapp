@@ -10,11 +10,15 @@ public interface OrderService {
 	
 	Optional<Order> getOne(Long id);
 	
+	Order findOne(Long id);
+	
 	Order save(Order order);
 	
-	void delete(Long id);
+	Order delete(Long id);
 	
 	Page<Order> all(int page);
 	
 	Page<Order> search(String orderNumber, String orderDescription, int pageNum);
+
+	Order update(Order order);
 }

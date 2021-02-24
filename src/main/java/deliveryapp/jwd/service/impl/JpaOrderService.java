@@ -32,8 +32,13 @@ public class JpaOrderService implements OrderService {
 	}
 
 	@Override
-	public void delete(Long id) {
-		orderRepository.deleteById(id);
+	public Order delete(Long id) {
+		Optional<Order> order = orderRepository.findById(id);
+		if(order.isPresent()) {
+			orderRepository.deleteById(id);
+			return order.get();
+		}
+		return null;
 		
 	}
 
@@ -45,6 +50,16 @@ public class JpaOrderService implements OrderService {
 	@Override
 	public Page<Order> search(String orderNumber, String orderDescription, int pageNum) {
 		return orderRepository.search(orderNumber, orderDescription, PageRequest.of(pageNum, 10));
+	}
+
+	@Override
+	public Order update(Order order) {
+		return orderRepository.save(order);
+	}
+
+	@Override
+	public Order findOne(Long id) {
+		return orderRepository.findOneById(id);
 	}
 	
 	
