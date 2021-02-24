@@ -7,8 +7,15 @@ import deliveryapp.jwd.model.Bill;
 
 public interface BillService {
 	
+	Bill findOne(Long id);
+	
 	List<Bill> getAll();
-	Optional<Bill> getOne(Long id);
+	
 	Bill save(Bill bill);
-
+	
+	Bill update(Bill bill);
+	
+	Bill deleted(Long id);
+	
+	Optional<Bill> getOne(Long id);
 }

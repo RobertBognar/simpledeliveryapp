@@ -8,4 +8,6 @@ import deliveryapp.jwd.model.Bill;
 @Repository
 public interface BillRepository extends JpaRepository<Bill, Long> {
 	
+	Bill findOneById(Long id);
+	
 }

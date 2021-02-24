@@ -35,4 +35,35 @@ public class JpaDelivererService implements DelivererService {
 		return delivererRepository.save(deliverer);
 	}
 
+	@Override
+	public Deliverer update(Deliverer deliverer) {
+		return delivererRepository.save(deliverer);
+	}
+
+	@Override
+	public Deliverer delete(Long id) {
+		Optional<Deliverer> deliverer = delivererRepository.findById(id);
+		if(deliverer.isPresent()) {
+			delivererRepository.deleteById(id);
+			return deliverer.get();
+		}
+		return null;
+	}
+
+	@Override
+	public List<Deliverer> find(String jmbg, String idCardNumber, String firstLastName) {
+		if(jmbg == null) {
+			jmbg = "";
+		}
+		
+		if(idCardNumber == null) {
+			idCardNumber = "";
+		}
+		
+		if(firstLastName == null) {
+			firstLastName = "";
+		}
+		return delivererRepository.find(jmbg, idCardNumber, firstLastName);
+	}
+
 }
